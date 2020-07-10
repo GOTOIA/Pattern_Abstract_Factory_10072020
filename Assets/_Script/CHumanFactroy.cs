@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CHumanFactroy : MonoBehaviour
+public class CHumanFactroy : CAbstractFactory
 {
+   
 
     //Création de la fonction fabrique d'objets relatif au type NPCHumanType
-    public IHuman GetHuman(NPCHumanType humanType)
+    public override IHuman GetHuman(NPCHumanType humanType)
     {
         switch (humanType)
         {
@@ -16,5 +17,10 @@ public class CHumanFactroy : MonoBehaviour
             default:return null;
         }
        
+    }
+
+    public override IAnimal GetAnimal(NPCAnimalType animalType)
+    {
+        return null;
     }
 }

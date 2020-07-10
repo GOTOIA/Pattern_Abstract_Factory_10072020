@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CAnimalFactory : MonoBehaviour
+
+public class CAnimalFactory : CAbstractFactory
 {
     //Création de la fonction fabrique d'objets relatif au type NPCAnimalType
-    public IAnimal GetAnimal(NPCAnimalType animalType)
+    public override IAnimal GetAnimal(NPCAnimalType animalType)
     {
         switch (animalType)
         {
@@ -14,5 +15,10 @@ public class CAnimalFactory : MonoBehaviour
             default: return null;
         }
 
+    }
+
+    public override IHuman GetHuman(NPCHumanType humanType)
+    {
+        return null;
     }
 }

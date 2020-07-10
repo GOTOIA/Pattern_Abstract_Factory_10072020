@@ -74,3 +74,7 @@ crashlytics-build.properties
 
 /[Aa]ssets/[Pp]lugins/[Gg]ithub/
 /[Aa]ssets/[Pp]lugins/GitHub.meta
+
+#Archives
+/[Aa]ssets/_[Ss]cript/[Aa]rchive/
+/[Aa]ssets/_[Ss]cript/Archive.meta

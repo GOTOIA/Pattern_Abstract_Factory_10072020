@@ -8,33 +8,41 @@ public class CNpcSpawner : MonoBehaviour
     IHuman humanBeggar;
     IAnimal AnimalCat;
 
-    //Factory Human
-    public CHumanFactroy humanFactroy=default;
+    //Factory Type
+    private CAbstractFactory factory;
+    
 
-    //Factory Animal
-    public CAnimalFactory animalFactory=default;
+   
 
     //Test Factory NPC
-    public void SpwanNpc()
+
+    //Spwan Npc type human
+    public void SpwanHumans()
     {
-        if(humanFactroy && animalFactory)
-        {
-            humanBeggar = humanFactroy.GetHuman(NPCHumanType.Beggar);
 
-            AnimalCat = animalFactory.GetAnimal(NPCAnimalType.Cat);
+        factory = CFactoryProducer.GetFactory(FactoryType.Human);
 
-            humanBeggar.Speak();
+        humanBeggar = factory.GetHuman(NPCHumanType.Beggar);
 
-            AnimalCat.Voice();
+        humanBeggar.Speak();
 
-        }
+    }
 
-        return;
+    //Spwan Npc type Animal
+    public void SpwanAnimals()
+    {
+
+        factory = CFactoryProducer.GetFactory(FactoryType.Animal);
+
+        AnimalCat = factory.GetAnimal(NPCAnimalType.Cat);
+
+        AnimalCat.Voice();
 
     }
 
     public void Start()
     {
-        SpwanNpc();
+        SpwanHumans();
+        SpwanAnimals();
     }
 }

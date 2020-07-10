@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-enum NPCHumanType{ Farmer, Beggar, ShopOwner }
+public enum NPCAnimalType { Cat,Dog }
 
 public interface IAnimal
 {
